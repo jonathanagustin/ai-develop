@@ -4,7 +4,7 @@ AI-Develop is a pre-configured AI development environment.
 
 The goal of this project is to minimize overhead setup and begin working ASAP.
 
-- This devcontainer allows for a fully-featured GitHub IDE.
+- This devcontainer allows for a fully-featured GitHub VSCode IDE.
 - Works anywhere you have access to a browser.
 - Automatically format documents and save on the GitHub cloud.
 
