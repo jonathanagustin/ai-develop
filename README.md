@@ -2,7 +2,21 @@
 
 AI-Develop is a pre-configured AI development environment.
 
-This minimal, lightweight environment uses a miniconda image and installs popular AI tools and libraries.
+The goal of this project is to minimize overhead setup and begin working ASAP.
+
+- This devcontainer allows for a fully-featured GitHub IDE.
+- Works anywhere you have access to a browser.
+- Automatically format documents and save on the GitHub cloud.
+
+## Install
+
+1. Go to <https://github.com/jonathanagustin/ai-develop/generate>
+1. Click on the `Private` radio button
+1. Enter a `Repository name`
+1. Click `Code`
+1. Click `Create Codespace on main`
+1. Wait 2 minutes to build
+1. Import or create an `.ipynb` file and begin working
 
 ## Features
 
