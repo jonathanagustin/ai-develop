@@ -2,7 +2,11 @@
 
 # priority install VSCode extensions
 code --force --install-extension ms-python.vscode-pylance
+
+# install and configure Python kernel
 code --force --install-extension ms-toolsai.jupyter
+mkdir -p /opt/conda/share/jupyter/kernels/python3/
+cp .devcontainer/kernel.json /opt/conda/share/jupyter/kernels/python3/kernel.json
 
 # initialize and configure conda
 conda config --set report_errors false
