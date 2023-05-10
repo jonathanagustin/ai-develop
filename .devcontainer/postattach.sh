@@ -13,6 +13,7 @@ conda config --add channels conda-forge
 conda install -y --quiet \
     ipykernel \
     notebook \
+    pandoc \
     autopep8 \
     pandas \
     matplotlib \
