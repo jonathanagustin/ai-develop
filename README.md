@@ -24,7 +24,7 @@ The goal of this project is to minimize setup and work ASAP.
 - AI Python libraries like TensorFlow, PyTorch, pandas, matplotlib
 - VSCode extensions for Python and Jupyter
 - PEP8 autoformat on save
-- Jupyter-notebook-to-PDF unctionality
+- Jupyter-notebook-to-PDF functionality
 - PDF viewer
 
 ## Use Cases
