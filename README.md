@@ -1,12 +1,12 @@
 # AI-Develop
 
-AI-Develop is a pre-configured AI development environment.
+AI-Develop is a pre-configured AI dev environment.
 
-The goal of this project is to minimize overhead setup and begin working ASAP.
+The goal of this project is to minimize setup and work ASAP.
 
-- This devcontainer allows for a fully-featured GitHub VSCode IDE.
-- Works anywhere you have access to a browser.
-- Automatically format documents and save on the GitHub cloud.
+- This devcontainer allows for a fully-featured GitHub VSCode IDE
+- Works anywhere where there is access to a browser
+- Automatically format documents and save to GitHub
 
 ## Install
 
@@ -24,14 +24,14 @@ The goal of this project is to minimize overhead setup and begin working ASAP.
 - AI Python libraries like TensorFlow, PyTorch, pandas, matplotlib
 - VSCode extensions for Python and Jupyter
 - PEP8 autoformat on save
-- Python-notebook-to-PDF unctionality
+- Jupyter-notebook-to-PDF unctionality
 - PDF viewer
 
 ## Use Cases
 
-### Export Python Notebook to PDF
+### Export Jupyter Notebook to PDF
 
-1. Open the Jupyter notebook in Visual Studio Code.
-1. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS) to open the command palette.
-1. Type `Jupyter: Export to PDF` and press `Enter`.
-1. Type a filename and press `Enter`.
+1. Open the Jupyter notebook in VS Code
+1. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS) to open the command palette
+1. Type `Jupyter: Export to PDF` and press `Enter`
+1. Type a filename and press `Enter`
