@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
-# priority install for VSCode extensions
-code --install-extension ms-python.vscode-pylance --force
-code --install-extension ms-toolsai.jupyter --force
+# priority install VSCode extensions
+code --force --install-extension ms-python.vscode-pylance
+code --force --install-extension ms-toolsai.jupyter
 
-# initialize conda
+# initialize and configure conda
 conda config --set report_errors false
 conda init bash
 conda config --add channels conda-forge
 
-# priority install for Python libraries
-conda install -y --quiet \
+# priority install Python AI/ML libraries
+conda install -y \
     ipykernel \
     notebook \
     pandoc \
@@ -23,22 +23,22 @@ conda install -y --quiet \
     scikit-learn
 
 # other VSCode extensions
-extensions=(
-    "ms-python.autopep8"
-    "ms-python.isort"
-    "mutantdino.resourcemonitor"
-    "DavidAnson.vscode-markdownlint"
-    "mechatroner.rainbow-csv"
-    "janisdd.vscode-edit-csv"
-    "analytic-signal.preview-pdf"
-)
+code --force --install-extension ms-python.autopep8
+code --force --install-extension ms-python.isort
+code --force --install-extension DavidAnson.vscode-markdownlint
+code --force --install-extension analytic-signal.preview-pdf
+code --force --install-extension mutantdino.resourcemonitor
+code --force --install-extension mechatroner.rainbow-csv
+code --force --install-extension janisdd.vscode-edit-csv
 
-# install loop for VSCode extensions
-for extension in "${extensions[@]}"; do
-    code --install-extension "$extension" --force
-done
+# libraries for converting notebook to PDF
+sudo apt-get update
+sudo apt-get install -y \
+    texlive-xetex \
+    texlive-fonts-recommended \
+    texlive-plain-generic
 
-# install other Python libraries
+# install other Python AI/ML libraries
 conda install -y \
     fastai \
     gensim \
@@ -51,10 +51,3 @@ conda install -y \
     tensorflow \
     torchvision \
     transformers
-
-# for converting Python notebook to PDF
-sudo apt-get update
-sudo apt-get install -y \
-    texlive-xetex \
-    texlive-fonts-recommended \
-    texlive-plain-generic
