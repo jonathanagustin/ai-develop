@@ -2,15 +2,15 @@
 
 AI-Develop is a pre-configured AI development environment.
 
-This minimal, lightweight environment uses a miniconda image and installs popular Python libraries and tools for AI, machine learning, and data science projects.
+This minimal, lightweight environment uses a miniconda image and installs popular AI tools and libraries.
 
 ## Features
 
-- Anaconda with Python 3.10.8
-- Python libraries for AI and data science like TensorFlow, PyTorch, pandas, matplotlib.
-- VSCode extensions for Python development, Jupyter notebooks, and code execution.
+- Miniconda with Python 3.10.8
+- AI Python libraries like TensorFlow, PyTorch, pandas, matplotlib
+- VSCode extensions for Python and Jupyter
 - PEP8 autoformat on save
-- PDF export for Jupyter notebooks
+- Python notebook to PDF functionality
 - PDF viewer
 
 ## Use Cases
@@ -19,4 +19,4 @@ This minimal, lightweight environment uses a miniconda image and installs popula
 
 1. Open the Jupyter notebook in Visual Studio Code.
 1. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS) to open the command palette.
-1. Type `Jupyter: Export to PDF` in the command palette and press Enter.
+1. Type `export to pdf` and click on `Jupyter: Export to PDF` and press `Enter`.
