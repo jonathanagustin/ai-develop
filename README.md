@@ -34,3 +34,4 @@ The goal of this project is to minimize overhead setup and begin working ASAP.
 1. Open the Jupyter notebook in Visual Studio Code.
 1. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS) to open the command palette.
 1. Type `export to pdf` and click on `Jupyter: Export to PDF` and press `Enter`.
+1. Give it a filename and press `Enter`.
