@@ -1,17 +1,17 @@
 # AI-Develop
 
-AI-Develop pre-configured AI development environment.
+AI-Develop is a pre-configured AI development environment.
 
-The environment is a devcontainer built on top of an Anaconda Docker image. It includes popular Python libraries and tools for AI, machine learning, and data science projects.
+This minimal, lightweight environment uses a miniconda image and installs popular Python libraries and tools for AI, machine learning, and data science projects.
 
 ## Features
 
-- Anaconda distribution with Python 3.10.8
-- Pre-installed Python libraries for AI and data science like TensorFlow, PyTorch, Keras, scikit-learn, pandas, and more
+- Anaconda with Python 3.10.8
+- Python libraries for AI and data science like TensorFlow, PyTorch, pandas, matplotlib.
 - VSCode extensions for Python development, Jupyter notebooks, and code execution.
 - PEP8 autoformat on save
 - PDF export for Jupyter notebooks
-- PDF viewer in VSCode
+- PDF viewer
 
 ## Use Cases
 

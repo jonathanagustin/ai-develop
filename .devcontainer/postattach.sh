@@ -1,22 +1,15 @@
 #!/usr/bin/env bash
 
-# priority list of extensions to install
-extensions=(
-    "ms-python.vscode-pylance"
-    "ms-toolsai.jupyter"
-)
-
-# install loop for VSCode extensions
-for extension in "${extensions[@]}"; do
-    code --install-extension "$extension" --force
-done
+# priority install for VSCode extensions
+code --install-extension ms-python.vscode-pylance --force
+code --install-extension ms-toolsai.jupyter --force
 
 # initialize conda
 conda config --set report_errors false
 conda init bash
 conda config --add channels conda-forge
 
-# priority install common AI/ML libraries
+# priority install for Python libraries
 conda install -y --quiet \
     ipykernel \
     notebook \
@@ -28,7 +21,7 @@ conda install -y --quiet \
     scipy \
     scikit-learn
 
-# list of other extensions to install
+# other VSCode extensions
 extensions=(
     "ms-python.autopep8"
     "ms-python.isort"
@@ -41,11 +34,11 @@ extensions=(
 
 # install loop for VSCode extensions
 for extension in "${extensions[@]}"; do
-    code --install-extension "$extension" --force 
+    code --install-extension "$extension" --force
 done
 
-# install other AI/ML libraries
-conda install -y --quiet \
+# install other Python libraries
+conda install -y \
     fastai \
     gensim \
     huggingface \
@@ -58,9 +51,9 @@ conda install -y --quiet \
     torchvision \
     transformers
 
-# needed for Jupyter: Export to PDF
-sudo apt-get update -qq
-sudo apt-get install -yqqq \
+# for converting Python notebook to PDF
+sudo apt-get update
+sudo apt-get install -y \
     texlive-xetex \
     texlive-fonts-recommended \
     texlive-plain-generic

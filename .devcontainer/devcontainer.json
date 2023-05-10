@@ -1,12 +1,13 @@
 {
     "image": "mcr.microsoft.com/vscode/devcontainers/miniconda:0-3",
     "name": "ai-develop",
+    // quietly install and configure in the background
     "postAttachCommand": "./.devcontainer/postattach.sh > /dev/null 2>&1 &",
     "customizations": {
         "vscode": {
             "extensions": [
-				"ms-python.python"
-			],
+                "ms-python.python"
+            ],
             "settings": {
                 "[python]": {
                     "editor.codeActionsOnSave": {
