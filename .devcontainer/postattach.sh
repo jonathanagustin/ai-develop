@@ -2,7 +2,11 @@
 # Executes when connecting to Codespace (through browser or VSCode client)
 
 install_extensions() {
-    # install extension here or else must reload
+    # install python extensions in order or else must reload
+    code --force --install-extension ms-python.python
+    code --force --install-extension ms-toolsai.jupyter
+    code --force --install-extension ms-python.autopep8
+    code --force --install-extension ms-python.isort
     code --force --install-extension ms-python.vscode-pylance
 }
 

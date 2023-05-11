@@ -1,5 +1,5 @@
 👋 Welcome to the AI-Develop Codespace!
 
-🛠️  Your environment is pre-configured with common AI/ML/DS technologies
+🛠️  The environment is pre-configured with common AI/ML/DS technologies
 
 📝 Read the README.md to learn how to use this Codespace

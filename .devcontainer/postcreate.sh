@@ -2,14 +2,11 @@
 # Executes after the creating Codespace and cloning repo
 
 upgrade_pip() {
-    python -m pip install --upgrade pip
+    /usr/local/bin/python -m pip install --upgrade pip
 }
 
 install_venv() {
-    # create virtual environment
-    python -m venv .venv
-
-    # install packages
+    /usr/local/bin/python -m venv /workspaces/ai-develop/.venv
     /workspaces/ai-develop/.venv/bin/pip install -r /workspaces/ai-develop/requirements.txt
 }
 
