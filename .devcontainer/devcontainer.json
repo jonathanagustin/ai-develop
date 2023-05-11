@@ -8,7 +8,6 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "ms-toolsai.jupyter",
                 "DavidAnson.vscode-markdownlint",
                 "mechatroner.rainbow-csv",
                 "janisdd.vscode-edit-csv",
