@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # Executes after the creating Codespace and cloning repo
 
+install_venv() {
+    /usr/local/bin/python -m venv /workspaces/ai-develop/.venv
+}
+
 install_jupyter2pdf() {
     sudo apt-get update
     sudo apt-get install -y texlive-xetex
-}
-
-install_venv() {
-    /usr/local/bin/python -m venv /workspaces/ai-develop/.venv
 }
 
 install_conda() {
@@ -40,10 +40,13 @@ install_conda() {
     done
 }
 
+
+
 main() {
-    install_jupyter2pdf &
     install_venv
+    install_jupyter2pdf &
     install_conda &
+    wait
 }
 
 # output to log
