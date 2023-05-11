@@ -3,13 +3,11 @@
 # Executes after the creating Codespace and cloning source code
 
 install_mamba() {
-    curl -sSL "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh" -o /tmp/mamba.sh
-    sudo chmod +x /tmp/mamba.sh
-    bash /tmp/mamba.sh -b -u
+    conda install mamba -y -n base -c conda-forge
 }
 
-install_default_env() {
-    /home/vscode/.local/bin/micromamba install -y \
+install_env() {
+    mamba install -y \
         ipykernel \
         jupyter \
         notebook \
