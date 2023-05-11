@@ -2,9 +2,9 @@
     "image": "mcr.microsoft.com/devcontainers/python:0-3.8",
     "name": "ai-develop",
     "onCreateCommand": "sudo cp .devcontainer/first-run-notice.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
-    "postCreateCommand": "./.devcontainer/postcreate.sh &",
-    "postStartCommand": "./.devcontainer/poststart.sh &",
-    "postAttachCommand": "./.devcontainer/postattach.sh &",
+    "postCreateCommand": "./.devcontainer/postcreate.sh",
+    "postAttachCommand": "bash -c /workspaces/ai-develop/.devcontainer/postattach.sh &",
+    "waitFor": "postCreateCommand",
     "customizations": {
         "vscode": {
             "extensions": [
