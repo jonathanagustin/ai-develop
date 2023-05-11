@@ -1,36 +1,19 @@
 #!/usr/bin/env bash
-
 # Executes after the creating Codespace and cloning source code
-install_env() {
-    conda install -y \
-        jupyter \
-        ipykernel \
-        notebook \
-        pandoc \
-        nbconvert \
-        autopep8 \
-        pandas \
-        matplotlib \
-        seaborn \
-        numpy \
-        scipy \
-        # scikit-learn \
-        # fastai \
-        # gensim \
-        # huggingface_hub \
-        # keras \
-        # nltk \
-        # opencv \
-        # pytorch \
-        # spacy \
-        # tensorflow \
-        # torchvision \
-        # transformers \
-        -c conda-forge
+
+update_pip() {
+    python -m pip install --upgrade pip
 }
 
-# main() {
-#     install_base
-# }
+install_venv() {
+    python -m venv .venv
+    .venv/bin/pip install -r requirements.txt
+}
 
-# main
+main() {
+    update_pip &
+    install_venv &
+}
+
+# output to log
+main > .devcontainer/postcreate.log 2>&1

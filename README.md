@@ -8,6 +8,8 @@ The goal of this project is to minimize dev setup.
 - Works anywhere where there is access to a browser
 - Automatically format documents and save to GitHub
 
+🔍 To explore VSCode, search using the Command Palette (Cmd/Ctrl + Shift + P)
+
 ## Install
 
 1. Go to <https://github.com/jonathanagustin/ai-develop/generate>

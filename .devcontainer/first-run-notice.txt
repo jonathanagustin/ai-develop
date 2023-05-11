@@ -2,6 +2,4 @@
 
 🛠️  Your environment is pre-configured with common AI/ML/DS technologies
 
-🔍 To explore VSCode, search using the Command Palette (Cmd/Ctrl + Shift + P)
-
 📝 Read the README.md to learn how to use this Codespace
