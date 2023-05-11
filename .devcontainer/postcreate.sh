@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 # Executes after the creating Codespace and cloning repo
 
-upgrade_pip() {
-    /usr/local/bin/python -m pip install --upgrade pip
-}
-
 install_jupyter2pdf() {
     sudo apt-get update
     sudo apt-get install -y texlive-xetex
@@ -45,7 +41,6 @@ install_conda() {
 }
 
 main() {
-    upgrade_pip
     install_jupyter2pdf &
     install_venv &
     install_conda &
