@@ -1,15 +1,10 @@
 #!/usr/bin/env bash
 
 # Executes after the creating Codespace and cloning source code
-
-install_mamba() {
-    conda install mamba -y -n base -c conda-forge
-}
-
 install_env() {
-    mamba install -y \
-        ipykernel \
+    conda install -y \
         jupyter \
+        ipykernel \
         notebook \
         pandoc \
         nbconvert \
@@ -19,24 +14,23 @@ install_env() {
         seaborn \
         numpy \
         scipy \
-        scikit-learn \
-        fastai \
-        gensim \
-        huggingface \
-        keras \
-        nltk \
-        opencv \
-        pytorch \
-        spacy \
-        tensorflow \
-        torchvision \
-        transformers \
+        # scikit-learn \
+        # fastai \
+        # gensim \
+        # huggingface_hub \
+        # keras \
+        # nltk \
+        # opencv \
+        # pytorch \
+        # spacy \
+        # tensorflow \
+        # torchvision \
+        # transformers \
         -c conda-forge
 }
 
-main() {
-    install_mamba
-    install_default_env
-}
+# main() {
+#     install_base
+# }
 
-main
+# main
