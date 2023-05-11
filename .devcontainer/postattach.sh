@@ -6,7 +6,6 @@ install_pip_packages() {
 }
 
 install_conda_packages() {
-    # install base packages
     /home/vscode/.miniconda/bin/conda install -y \
         jupyter \
         ipykernel \

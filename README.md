@@ -21,7 +21,6 @@ The goal of this project is to minimize dev setup.
 ## Features
 
 - Miniconda with Python 3.10.8
-- AI Python libraries like TensorFlow, PyTorch, pandas, matplotlib
 - VSCode extensions for Python and Jupyter
 - PEP8 autoformat on save
 - Jupyter-notebook-to-PDF functionality
