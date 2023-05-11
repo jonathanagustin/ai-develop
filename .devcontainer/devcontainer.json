@@ -1,23 +1,54 @@
 {
-    "image": "mcr.microsoft.com/vscode/devcontainers/miniconda:0-3",
+    "image": "mcr.microsoft.com/devcontainers/python:0-3.8",
     "name": "ai-develop",
-    // quietly install and configure in the background
-    "postAttachCommand": "./.devcontainer/postattach.sh > /dev/null 2>&1 &",
+    "onCreateCommand": "sudo cp .devcontainer/first-run-notice.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
+    "postCreateCommand": "bash -c .devcontainer/postcreate.sh",
+    "postAttachCommand": "bash -c .devcontainer/postattach.sh &",
+    "waitFor": "postCreateCommand",
     "customizations": {
         "vscode": {
             "extensions": [
-                "ms-python.python"
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "ms-python.isort",
+                "ms-python.autopep8",
+                "DavidAnson.vscode-markdownlint",
+                "mechatroner.rainbow-csv",
+                "janisdd.vscode-edit-csv",
+                "analytic-signal.preview-pdf",
+                "mutantdino.resourcemonitor",
+                "EditorConfig.EditorConfig"
             ],
             "settings": {
+                "editor.tabSize": 4,
+                "editor.insertSpaces": true,
+                "editor.detectIndentation": false,
                 "[python]": {
                     "editor.codeActionsOnSave": {
                         "source.organizeImports": true
                     },
                     "editor.formatOnSave": true,
-                    "python.defaultInterpreterPath": "/opt/conda/bin/python",
+                    "python.pythonPath": "/workspaces/ai-develop/.venv/bin/python",
+                    "python.defaultInterpreterPath": "/workspaces/ai-develop/.venv/bin/python",
+                    "python.autoselectInterpreter": true,
                     "python.formatting.provider": "autopep8"
                 }
             }
-        }
+        },
+        "configurations": [
+            {
+                "name": "jupyter2pdf",
+                "type": "python",
+                "request": "launch",
+                "module": "jupyter",
+                "args": [
+                    "nbconvert",
+                    "--to",
+                    "pdf",
+                    "${file}"
+                ],
+                "justMyCode": true,
+            }
+        ]
     }
 }
