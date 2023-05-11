@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 # Executes when connecting to Codespace (through browser or VSCode client)
 
+install_pip_packages() {
+    /workspaces/ai-develop/.venv/bin/pip install -r /workspaces/ai-develop/requirements.txt
+}
+
 install_conda_packages() {
     # install base packages
     /home/vscode/.miniconda/bin/conda install -y \
@@ -29,6 +33,7 @@ install_conda_packages() {
 }
 
 main() {
+    install_pip_packages &
     install_conda_packages &
 }
 

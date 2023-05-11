@@ -31,7 +31,7 @@
                     },
                     "editor.formatOnSave": true,
                     "python.defaultInterpreterPath": ".venv/bin/python",
-                    "python.pythonPath": ".venv/bin/python",
+                    "jupyter.defaultKernel": ".venv (Python 3.8.16)",
                     "python.formatting.provider": "autopep8"
                 }
             }
