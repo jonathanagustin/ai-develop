@@ -42,7 +42,7 @@ install_conda() {
 
 main() {
     install_jupyter2pdf &
-    install_venv &
+    install_venv
     install_conda &
 }
 
