@@ -17,12 +17,6 @@ install_conda() {
     ~/miniconda.sh -b -u -p ~/.miniconda
     rm -rf ~/miniconda.sh
 
-    # add conda to PATH if not already in path
-    LINE="export PATH=\$PATH:$HOME/.miniconda/bin"
-    if ! /bin/grep -qxF $LINE /home/vscode/.bashrc; then
-        echo "$LINE" >> /home/vscode/.bashrc
-    fi
-
     # add conda to PATH for this session
     export PATH="\$PATH:$HOME/.miniconda/bin"
 
@@ -30,12 +24,20 @@ install_conda() {
     conda config --set auto_activate_base false
     conda config --add channels conda-forge
 
-    # fix: activate venv on shell start must be after conda init
+    # fix: conda init must be before source venv
     conda init bash
-    LINE="source /workspaces/ai-develop/.venv/bin/activate"
-    if ! /bin/grep -qxF "$LINE" /home/vscode/.bashrc; then
-        echo "$LINE" >> /home/vscode/.bashrc
-    fi
+
+    # append lines to .bashrc
+    lines=(
+        "export PATH=\$PATH:$HOME/.miniconda/bin"
+        "source /workspaces/ai-develop/.venv/bin/activate"
+    )
+
+    for line in "${lines[@]}"; do
+        if ! /bin/grep -qxF "$line" /home/vscode/.bashrc; then
+            echo "$line" >> /home/vscode/.bashrc
+        fi
+    done
 }
 
 main() {
