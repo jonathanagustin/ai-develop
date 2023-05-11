@@ -7,7 +7,8 @@ upgrade_pip() {
 
 install_venv() {
     /usr/local/bin/python -m venv /workspaces/ai-develop/.venv
-    /workspaces/ai-develop/.venv/bin/pip install -r /workspaces/ai-develop/requirements.txt
+    /workspaces/ai-develop/.venv/bin/pip install ipykernel
+    /workspaces/ai-develop/.venv/bin/python -m ipykernel install --user
 }
 
 install_conda() {
