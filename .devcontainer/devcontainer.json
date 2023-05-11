@@ -8,10 +8,7 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "ms-python.python",
                 "ms-toolsai.jupyter",
-                "ms-python.autopep8",
-                "ms-python.isort",
                 "DavidAnson.vscode-markdownlint",
                 "mechatroner.rainbow-csv",
                 "janisdd.vscode-edit-csv",
