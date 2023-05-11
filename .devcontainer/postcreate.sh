@@ -5,10 +5,14 @@ upgrade_pip() {
     /usr/local/bin/python -m pip install --upgrade pip
 }
 
+install_jupyter2pdf() {
+    sudo apt-get update
+    sudo apt-get install -y texlive-xetex
+}
+
 install_venv() {
     /usr/local/bin/python -m venv /workspaces/ai-develop/.venv
-    /workspaces/ai-develop/.venv/bin/pip install ipykernel
-    /workspaces/ai-develop/.venv/bin/python -m ipykernel install --user
+    /workspaces/ai-develop/.venv/bin/pip install -r /workspaces/ai-develop/requirements.txt
 }
 
 install_conda() {
@@ -43,8 +47,9 @@ install_conda() {
 
 main() {
     upgrade_pip
-    install_venv
-    install_conda
+    install_jupyter2pdf &
+    install_venv &
+    install_conda &
 }
 
 # output to log
