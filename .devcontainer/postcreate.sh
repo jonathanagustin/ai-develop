@@ -12,7 +12,6 @@ install_jupyter2pdf() {
 
 install_venv() {
     /usr/local/bin/python -m venv /workspaces/ai-develop/.venv
-    /workspaces/ai-develop/.venv/bin/pip install -r /workspaces/ai-develop/requirements.txt
 }
 
 install_conda() {
