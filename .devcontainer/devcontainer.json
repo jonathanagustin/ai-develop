@@ -1,14 +1,27 @@
 {
-    "image": "mcr.microsoft.com/vscode/devcontainers/miniconda:0-3",
+    "image": "mcr.microsoft.com/devcontainers/miniconda:0-3",
     "name": "ai-develop",
-    // quietly install and configure in the background
-    "postAttachCommand": "./.devcontainer/postattach.sh > /dev/null 2>&1 &",
+    "onCreateCommand": "sudo cp .devcontainer/first-run-notice.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt && conda init bash && conda config --set report_errors false && conda config --add channels conda-forge",
+    "postCreateCommand": "./.devcontainer/postcreate.sh",
+    "postStartCommand": "./.devcontainer/poststart.sh &",
+    "postAttachCommand": "./.devcontainer/postattach.sh &",    
+    "waitFor": "postCreateCommand",
     "customizations": {
         "vscode": {
             "extensions": [
-                "ms-python.python"
+                "ms-python.python",
+                "ms-python.autopep8",
+                "ms-python.isort",
+                "DavidAnson.vscode-markdownlint",
+                "mechatroner.rainbow-csv",
+                "janisdd.vscode-edit-csv",
+                "analytic-signal.preview-pdf",
+                "mutantdino.resourcemonitor"
             ],
             "settings": {
+                "editor.tabSize": 4,
+                "editor.insertSpaces": true,
+                "editor.detectIndentation": false,
                 "[python]": {
                     "editor.codeActionsOnSave": {
                         "source.organizeImports": true
