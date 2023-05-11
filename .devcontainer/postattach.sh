@@ -1,15 +1,6 @@
 #!/usr/bin/env bash
 # Executes when connecting to Codespace (through browser or VSCode client)
 
-install_extensions() {
-    # install python extensions in order or else must reload
-    code --force --install-extension ms-python.python
-    code --force --install-extension ms-toolsai.jupyter
-    code --force --install-extension ms-python.autopep8
-    code --force --install-extension ms-python.isort
-    code --force --install-extension ms-python.vscode-pylance
-}
-
 install_conda_packages() {
     # install base packages
     /home/vscode/.miniconda/bin/conda install -y \
@@ -38,7 +29,6 @@ install_conda_packages() {
 }
 
 main() {
-    install_extensions &
     install_conda_packages &
 }
 
