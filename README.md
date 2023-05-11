@@ -15,7 +15,7 @@ The goal of this project is to minimize dev setup.
 1. Enter a `Repository name`
 1. Click `Code`
 1. Click `Create Codespace on main`
-1. Wait 2 minutes to build
+1. Wait a couple minutes to build
 1. Import or create an `.ipynb` file and begin working
 
 ## Features
