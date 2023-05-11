@@ -17,9 +17,7 @@
                 "janisdd.vscode-edit-csv",
                 "analytic-signal.preview-pdf",
                 "mutantdino.resourcemonitor",
-                "EditorConfig.EditorConfig",
-                "GitHub.copilot",
-                "GitHub.copilot-chat@0.1.2023051001"
+                "EditorConfig.EditorConfig"
             ],
             "settings": {
                 "editor.tabSize": 4,
@@ -50,13 +48,6 @@
                     "${file}"
                 ],
                 "justMyCode": true,
-                "keybindings": [
-                    {
-                        "key": "ctrl+shift+j",
-                        "command": "workbench.action.debug.start",
-                        "args": "jupyter2pdf"
-                    }
-                ]
             }
         ]
     }
