@@ -8,8 +8,6 @@ The goal of this project is to minimize dev setup.
 - Works anywhere where there is access to a browser
 - Automatically format documents and save to GitHub
 
-🔍 To explore VSCode, search using the Command Palette (Cmd/Ctrl + Shift + P)
-
 ## Install
 
 1. Go to <https://github.com/jonathanagustin/ai-develop/generate>
@@ -33,7 +31,6 @@ The goal of this project is to minimize dev setup.
 
 ### Export Jupyter Notebook to PDF
 
-1. Open the Jupyter notebook in VS Code
-1. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS) to open the command palette
-1. Type `Jupyter: Export to PDF` and press `Enter`
-1. Type a filename and press `Enter`
+```console
+jupyter nbconvert --to pdf <YOUR_JUPYTER_NOTEBOOK>.ipynb
+```

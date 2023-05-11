@@ -8,6 +8,10 @@
     "customizations": {
         "vscode": {
             "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "ms-python.isort",
+                "ms-python.autopep8",
                 "DavidAnson.vscode-markdownlint",
                 "mechatroner.rainbow-csv",
                 "janisdd.vscode-edit-csv",
@@ -26,11 +30,33 @@
                         "source.organizeImports": true
                     },
                     "editor.formatOnSave": true,
+                    "python.pythonPath": ".venv/bin/python",
                     "python.defaultInterpreterPath": ".venv/bin/python",
-                    "jupyter.defaultKernel": ".venv (Python 3.8.16)",
                     "python.formatting.provider": "autopep8"
                 }
             }
-        }
+        },
+        "configurations": [
+            {
+                "name": "jupyter2pdf",
+                "type": "python",
+                "request": "launch",
+                "module": "jupyter",
+                "args": [
+                    "nbconvert",
+                    "--to",
+                    "pdf",
+                    "${file}"
+                ],
+                "justMyCode": true,
+                "keybindings": [
+                    {
+                        "key": "ctrl+shift+j",
+                        "command": "workbench.action.debug.start",
+                        "args": "jupyter2pdf"
+                    }
+                ]
+            }
+        ]
     }
 }
