@@ -1,7 +1,6 @@
 name: Push Image to GitHub Container Registry
 
 on:
-  push:
   pull_request:
     branches:
       - main
