@@ -1,4 +1,4 @@
-name: Push Image to GitHub Container Registry
+name: Push Image to Registry
 
 on:
   push:
@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  push-build:
     runs-on: ubuntu-latest
 
     steps:
