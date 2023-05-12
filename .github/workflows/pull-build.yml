@@ -45,7 +45,6 @@ jobs:
       with:
         context: .devcontainer/
         push: true
-        tags: 
-          ghcr.io/${{ github.repository_owner }}/ai-develop:${{ env.BRANCH_NAME }}
+        tags: ghcr.io/${{ github.repository_owner }}/ai-develop:${{ env.BRANCH_NAME }}-pr-${{ github.event.number }}
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
