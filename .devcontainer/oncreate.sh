@@ -12,7 +12,7 @@ get_info() {
     # test whether code is installed at this point
     echo -e "code: $(which code)"
     # test what directories are available at $HOME
-    echo -e "Directories: $(cd ~ && ls -la)"
+    echo -e "Directories: $(ls -la $HOME)"
     echo -e "-----------------------------"
 }
 
