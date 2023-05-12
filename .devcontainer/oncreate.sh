@@ -44,4 +44,4 @@ main() {
 }
 
 # output to log
-main > /tmp/postcreate.log 2>&1
+main
