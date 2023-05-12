@@ -22,13 +22,14 @@ add_custom_welcome() {
 
 install_apt_libs() {
     sudo apt-get update
+
+    # required for converting notebooks to PDF
     sudo apt-get install -y texlive-xetex \
         texlive-fonts-recommended \
         texlive-plain-generic
 }
 
 install_conda() {
-
     # download and install miniconda
     curl -sSL https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o "${HOME}/miniconda.sh"
     chmod +x "${HOME}/miniconda.sh"
