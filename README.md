@@ -1,6 +1,6 @@
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/jonathanagustin/ai-develop?quickstart=1)
-
 # AI-Develop
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/jonathanagustin/ai-develop?quickstart=1)
 
 AI-Develop is a pre-configured AI dev environment.
 
