@@ -26,8 +26,7 @@
                         "source.organizeImports": true
                     },
                     "editor.formatOnSave": true,
-                    // "python.pythonPath": "/workspaces/ai-develop/.venv/bin/python",
-                    // "python.defaultInterpreterPath": "/workspaces/ai-develop/.venv/bin/python",
+                    "python.defaultInterpreterPath": "${HOME}/.miniconda/bin/python",
                     "python.autoselectInterpreter": true,
                     "python.formatting.provider": "autopep8"
                 }
