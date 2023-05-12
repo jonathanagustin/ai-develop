@@ -24,7 +24,7 @@ install_apt_libs() {
     sudo apt-get update
     sudo apt-get install -y texlive-xetex \
         texlive-fonts-recommended \
-        texlive-generic-recommended
+        texlive-plain-generic
 }
 
 install_conda() {
