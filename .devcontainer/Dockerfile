@@ -8,8 +8,8 @@ RUN apt-get update && \
         texlive-plain-generic && \
     conda init bash && \
     conda config --add channels conda-forge && \
-    conda create -y -n default python=3.8 && \
-    conda install -n default -y \
+    conda create -y python=3.8 && \
+    conda install -y \
         fastai \
         gensim \
         huggingface_hub \
