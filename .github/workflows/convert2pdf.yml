@@ -12,15 +12,15 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3.5.2
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4.6.0
       with:
         python-version: 3.8
 
     - name: Cache pip dependencies
-      uses: actions/cache@v2
+      uses: actions/cache@v3.3.1
       with:
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ hashFiles('**/*.py') }}
@@ -33,7 +33,7 @@ jobs:
         python -m ipykernel install --user
 
     - name: Cache apt dependencies
-      uses: actions/cache@v2
+      uses: actions/cache@v3.3.1
       with:
         path: /var/cache/apt/archives
         key: ${{ runner.os }}-apt
