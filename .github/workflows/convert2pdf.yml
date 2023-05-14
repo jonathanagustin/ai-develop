@@ -45,7 +45,7 @@ jobs:
       run: |
         mkdir output
         for file in $(find . -name "*.ipynb"); do
-          jupyter nbconvert --to pdf $file --output-dir=output
+          jupyter nbconvert --to pdf --execute --allow-errors --ExecutePreprocessor.timeout=-1 $file --output-dir=output
         done
 
     - name: Commit and push PDFs
