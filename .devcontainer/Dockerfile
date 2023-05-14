@@ -30,6 +30,7 @@ RUN apt-get update && \
         scipy \
         seaborn \
         spacy \
+        tabulate \
         tensorflow \
         torchvision \
         transformers
