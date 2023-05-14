@@ -4,15 +4,15 @@
 
 AI-Develop is a GitHub Codespace preloaded with basic AI technologies.
 
-- This devcontainer allows for a fully-featured GitHub VSCode IDE
-- Works anywhere where there is access to a browser
+- Code with your browser on the cloud
 - Automatically format documents and save to GitHub
+- Auto-convert `.ipynb` files to `.pdf` to branch `output-[BRANCH]`
 
 ## Features
 
 - Miniconda with Python 3.10.8
 - VSCode Extensions: Python and Jupyter
-- PEP8 autoformat on save
+- autoformat on save
 - PDF viewer
 - Jupyter-notebook-to-PDF conversion
 
