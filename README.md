@@ -30,6 +30,6 @@ AI-Develop is a GitHub Codespace preloaded with basic AI technologies.
 
 ### Export Jupyter Notebook to PDF
 
-```console
+```bash
 jupyter nbconvert --to pdf <YOUR_JUPYTER_NOTEBOOK>.ipynb
 ```
