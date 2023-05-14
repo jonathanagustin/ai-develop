@@ -56,4 +56,4 @@ jobs:
         git checkout -b output-${GITHUB_REF##*/}
         git add output/*.pdf
         git commit -m "Add generated PDFs"
-        git push -u origin output-${GITHUB_REF##*/}
+        git push -u origin output-${GITHUB_REF##*/} --force
