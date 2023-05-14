@@ -54,5 +54,4 @@ jobs:
         git add output/*.pdf
         git commit -m "Add PDFs generated from Notebooks" || echo "No changes to commit"
         git branch --set-upstream-to=origin/output-${GITHUB_REF##*/}
-        git pull
         git push origin output-${GITHUB_REF##*/}
