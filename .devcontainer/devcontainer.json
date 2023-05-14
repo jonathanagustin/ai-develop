@@ -1,7 +1,9 @@
 {
-    "image": "mcr.microsoft.com/devcontainers/miniconda:0-3",
     "name": "ai-develop",
-    "onCreateCommand": "/bin/bash -c '.devcontainer/oncreate.sh'",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "onCreateCommand": "./.devcontainer/oncreate.sh",
     "waitFor": "onCreateCommand",
     "customizations": {
         "vscode": {
