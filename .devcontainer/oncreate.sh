@@ -9,9 +9,7 @@ get_info() {
     echo -e "Shell: $SHELL"
     echo -e "Working Directory: $(pwd)"
     echo -e "PATH: $PATH"
-    # test whether code is installed at this point
     echo -e "code: $(which code)"
-    # test what directories are available at $HOME
     echo -e "Directories: $(ls -la $HOME)"
     echo -e "-----------------------------"
 }
