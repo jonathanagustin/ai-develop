@@ -1,0 +1,39 @@
+name: Push Latest Image to Registry
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  retag-latest:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3.5.2
+
+    - name: Log in to GitHub Container Registry
+      uses: docker/login-action@v2.1.0
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GHCR_TOKEN }}
+
+    - name: Extract PR number
+      run: |
+        pr_number=$(git log --merges --oneline --reverse --ancestry-path -1 --merges --pretty=format:"%s" | grep -oP '(?<=Merge pull request #)\d+')
+        echo "PR_NUMBER=$pr_number" >> $GITHUB_ENV
+
+    - name: Pull PR image
+      run: docker pull ghcr.io/${{ github.repository_owner }}/ai-develop:main-pr-${{ env.PR_NUMBER }}
+
+    - name: Retag PR image as latest
+      run: docker tag ghcr.io/${{ github.repository_owner }}/ai-develop:main-pr-${{ env.PR_NUMBER }} ghcr.io/${{ github.repository_owner }}/ai-develop:latest
+
+    - name: Push latest image
+      run: docker push ghcr.io/${{ github.repository_owner }}/ai-develop:latest

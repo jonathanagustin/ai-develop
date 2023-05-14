@@ -1,0 +1,56 @@
+name: Convert Notebooks to PDFs
+
+on:
+  push:
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3.5.2
+
+    - name: Set up Python
+      uses: actions/setup-python@v4.6.0
+      with:
+        python-version: 3.8
+
+    - name: Cache pip dependencies
+      uses: actions/cache@v3.3.1
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/*.py') }}
+        restore-keys: ${{ runner.os }}-pip-
+
+    - name: Install pip dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install nbconvert ipykernel
+        python -m ipykernel install --user
+
+    - name: Cache apt dependencies
+      uses: actions/cache@v3.3.1
+      with:
+        path: /var/cache/apt/archives
+        key: ${{ runner.os }}-apt
+        restore-keys: ${{ runner.os }}-apt-
+
+    - name: Install apt dependencies
+      run: sudo apt-get install -y pandoc texlive-xetex
+
+    - name: Convert Notebooks to PDFs
+      run: |
+        mkdir output
+        for file in $(find . -name "*.ipynb"); do
+          jupyter nbconvert --to pdf --execute --allow-errors --ExecutePreprocessor.timeout=-1 $file --output-dir=output
+        done
+
+    - name: Commit and push PDFs
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git checkout -b output-${GITHUB_REF##*/}
+        git add output/*.pdf
+        git commit -m "Add PDFs generated from Notebooks" || echo "No changes to commit"
+        git push origin output-${GITHUB_REF##*/}

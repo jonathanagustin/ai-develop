@@ -1,12 +1,20 @@
 # AI-Develop
 
-AI-Develop is a pre-configured AI dev environment.
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/jonathanagustin/ai-develop?quickstart=1)
 
-The goal of this project is to minimize dev setup.
+AI-Develop is a GitHub Codespace preloaded with basic AI technologies.
 
-- This devcontainer allows for a fully-featured GitHub VSCode IDE
-- Works anywhere where there is access to a browser
+- Code with your browser on the cloud
 - Automatically format documents and save to GitHub
+- Auto-generates PDFs to branch: `output-[BRANCH]`
+
+## Features
+
+- Miniconda with Python 3.10.8
+- VSCode Extensions: Python and Jupyter
+- autoformat on save
+- PDF viewer
+- Jupyter-notebook-to-PDF conversion
 
 ## Install
 
@@ -18,18 +26,10 @@ The goal of this project is to minimize dev setup.
 1. Wait a couple minutes to build
 1. Import or create an `.ipynb` file and begin working
 
-## Features
-
-- Miniconda with Python 3.10.8
-- VSCode extensions for Python and Jupyter
-- PEP8 autoformat on save
-- Jupyter-notebook-to-PDF functionality
-- PDF viewer
-
 ## Use Cases
 
 ### Export Jupyter Notebook to PDF
 
-```console
+```bash
 jupyter nbconvert --to pdf <YOUR_JUPYTER_NOTEBOOK>.ipynb
 ```

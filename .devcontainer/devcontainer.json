@@ -1,23 +1,27 @@
 {
-    "image": "mcr.microsoft.com/devcontainers/python:0-3.8",
     "name": "ai-develop",
-    "onCreateCommand": "sudo cp .devcontainer/first-run-notice.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
-    "postCreateCommand": "bash -c .devcontainer/postcreate.sh",
-    "postAttachCommand": "bash -c .devcontainer/postattach.sh &",
-    "waitFor": "postCreateCommand",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "onCreateCommand": "./.devcontainer/oncreate.sh",
+    "waitFor": "onCreateCommand",
     "customizations": {
         "vscode": {
             "extensions": [
+                "analytic-signal.preview-pdf",
+                "DavidAnson.vscode-markdownlint",
+                "EditorConfig.EditorConfig",
+                "GitHub.copilot-chat@0.1.2023051101",
+                "GitHub.copilot-labs",
+                "GitHub.vscode-github-actions",
+                "janisdd.vscode-edit-csv",
+                "mechatroner.rainbow-csv",
+                "ms-azuretools.vscode-docker",
+                "ms-python.autopep8",
+                "ms-python.isort",
                 "ms-python.python",
                 "ms-toolsai.jupyter",
-                "ms-python.isort",
-                "ms-python.autopep8",
-                "DavidAnson.vscode-markdownlint",
-                "mechatroner.rainbow-csv",
-                "janisdd.vscode-edit-csv",
-                "analytic-signal.preview-pdf",
-                "mutantdino.resourcemonitor",
-                "EditorConfig.EditorConfig"
+                "mutantdino.resourcemonitor"
             ],
             "settings": {
                 "editor.tabSize": 4,
@@ -28,27 +32,11 @@
                         "source.organizeImports": true
                     },
                     "editor.formatOnSave": true,
-                    "python.pythonPath": "/workspaces/ai-develop/.venv/bin/python",
-                    "python.defaultInterpreterPath": "/workspaces/ai-develop/.venv/bin/python",
+                    "python.defaultInterpreterPath": "/opt/conda/bin/python",
                     "python.autoselectInterpreter": true,
                     "python.formatting.provider": "autopep8"
                 }
             }
-        },
-        "configurations": [
-            {
-                "name": "jupyter2pdf",
-                "type": "python",
-                "request": "launch",
-                "module": "jupyter",
-                "args": [
-                    "nbconvert",
-                    "--to",
-                    "pdf",
-                    "${file}"
-                ],
-                "justMyCode": true,
-            }
-        ]
+        }
     }
 }
