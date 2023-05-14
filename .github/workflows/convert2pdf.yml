@@ -2,9 +2,6 @@ name: Convert Notebooks to PDFs
 
 on:
   push:
-    branches:
-      - main
-      - dev
 
 jobs:
   convert:
