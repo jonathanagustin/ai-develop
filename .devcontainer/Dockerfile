@@ -1,5 +1,7 @@
 FROM mcr.microsoft.com/devcontainers/miniconda:0-3
 
+USER root
+
 RUN apt-get update && \
     apt-get install -y texlive-xetex \
         texlive-fonts-recommended \
