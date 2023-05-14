@@ -6,7 +6,7 @@ AI-Develop is a GitHub Codespace preloaded with basic AI technologies.
 
 - Code with your browser on the cloud
 - Automatically format documents and save to GitHub
-- Auto-convert `.ipynb` files to `.pdf` to branch `output-[BRANCH]`
+- Auto-generates PDFs to branch: `output-[BRANCH]`
 
 ## Features
 
