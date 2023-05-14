@@ -1,5 +1,5 @@
 {
-    "image": "mcr.microsoft.com/devcontainers/python:0-3.8",
+    "image": "mcr.microsoft.com/devcontainers/miniconda:0-3",
     "name": "ai-develop",
     "onCreateCommand": "/bin/bash -c '.devcontainer/oncreate.sh'",
     "waitFor": "onCreateCommand",
@@ -26,7 +26,7 @@
                         "source.organizeImports": true
                     },
                     "editor.formatOnSave": true,
-                    "python.defaultInterpreterPath": "/home/vscode/miniconda/envs/default/bin/python",
+                    "python.defaultInterpreterPath": "/opt/conda/bin/python",
                     "python.autoselectInterpreter": true,
                     "python.formatting.provider": "autopep8"
                 }
