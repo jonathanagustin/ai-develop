@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - dev
 
 jobs:
   convert:
@@ -18,11 +19,27 @@ jobs:
       with:
         python-version: 3.8
 
-    - name: Install dependencies
+    - name: Cache pip dependencies
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/*.py') }}
+        restore-keys: ${{ runner.os }}-pip-
+
+    - name: Install pip dependencies
       run: |
         python -m pip install --upgrade pip
         pip install nbconvert
-        sudo apt-get install -y pandoc texlive-xetex
+
+    - name: Cache apt dependencies
+      uses: actions/cache@v2
+      with:
+        path: /var/cache/apt/archives
+        key: ${{ runner.os }}-apt-${{ hashFiles('**/apt-packages.txt') }}
+        restore-keys: ${{ runner.os }}-apt-
+
+    - name: Install apt dependencies
+      run: sudo apt-get install -y pandoc texlive-xetex
 
     - name: Convert Notebooks to PDFs
       run: |
