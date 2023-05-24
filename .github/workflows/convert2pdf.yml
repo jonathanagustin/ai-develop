@@ -20,7 +20,7 @@ jobs:
       uses: actions/cache@v3.3.1
       with:
         path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/*.py') }}
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/*.ipynb') }}
         restore-keys: ${{ runner.os }}-pip-
 
     - name: Install pip dependencies
@@ -56,4 +56,4 @@ jobs:
         git checkout -b output-${GITHUB_REF##*/}
         git add output/*.pdf
         git commit -m "Add generated PDFs"
-        git push -u origin output-${GITHUB_REF##*/}
+        git push -u origin output-${GITHUB_REF##*/} --force

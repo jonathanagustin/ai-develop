@@ -13,6 +13,7 @@ RUN apt-get update && \
         gensim \
         huggingface_hub \
         ipykernel \
+        ipython \
         jupyter \
         keras \
         matplotlib \
