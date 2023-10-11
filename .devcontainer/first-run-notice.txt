@@ -1,0 +1,4 @@
+🚀 Keyboard Shortcuts 🚀
+F1: Command Mode
+Ctrl + ` (backtick): Open Terminal
+Ctrl + Shift + G: Open Source Control / Git

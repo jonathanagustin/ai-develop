@@ -1,0 +1,37 @@
+name: Convert Notebooks to PDFs
+
+on:
+  push:
+
+permissions:
+  contents: write
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Script
+        run: |
+          # DEPENDENCIES
+          python -m pip install --upgrade pip
+          pip install nbconvert ipykernel
+          python -m ipykernel install --user
+          sudo apt-get install -y pandoc texlive-xetex
+
+          # CONVERT NOTEBOOK TO PDF
+          mkdir output
+          for file in $(find . -name "*.ipynb"); do
+            jupyter nbconvert --to pdf --execute --allow-errors --ExecutePreprocessor.timeout=-1 $file --output-dir=output
+          done
+
+          # PUSH TO REPO
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git checkout -b output-${GITHUB_REF##*/}
+          git add output/*.pdf
+          git commit -m "Add generated PDFs"
+          git push -u origin output-${GITHUB_REF##*/} --force

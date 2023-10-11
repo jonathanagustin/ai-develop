@@ -1,0 +1,34 @@
+{
+    "name": "ai-develop",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "onCreateCommand": "./.devcontainer/oncreate.sh",
+    "waitFor": "onCreateCommand",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "analytic-signal.preview-pdf",
+                "janisdd.vscode-edit-csv",
+                "ms-python.autopep8",
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "mutantdino.resourcemonitor"
+            ],
+            "settings": {
+                "editor.tabSize": 4,
+                "editor.insertSpaces": true,
+                "editor.detectIndentation": false,
+                "[python]": {
+                    "editor.codeActionsOnSave": {
+                        "source.organizeImports": true
+                    },
+                    "editor.formatOnSave": true,
+                    "python.defaultInterpreterPath": "/opt/conda/bin/python",
+                    "python.autoselectInterpreter": true,
+                    "python.formatting.provider": "autopep8"
+                }
+            }
+        }
+    }
+}
